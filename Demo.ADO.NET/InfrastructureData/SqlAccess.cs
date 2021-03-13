@@ -57,7 +57,29 @@ namespace InfrastructureData
 		/// <returns></returns>
 		public static string ExecuteNonQuery(string commandText)
 		{
-			return ExecuteNonQuery(_defaultConnection, commandText);
+			return ExecuteNonQuery(_defaultConnection, commandText, null, -1);
+		}
+
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="commandText"></param>
+		/// <param name="Parameters"></param>
+		/// <returns></returns>
+		public static string ExecuteNonQuery(string commandText, SqlParameter[] Parameters)
+		{
+			return ExecuteNonQuery(_defaultConnection, commandText, Parameters, -1);
+		}
+
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="commandText"></param>
+		/// <param name="Parameters"></param>
+		/// <returns></returns>
+		public static string ExecuteNonQuery(string connectionString, string commandText, SqlParameter[] Parameters)
+		{
+			return ExecuteNonQuery(connectionString, commandText, Parameters, -1);
 		}
 
 		/// <summary>
@@ -150,7 +172,29 @@ namespace InfrastructureData
 		/// <returns></returns>
 		public static DataTable FillDataset(string commandText)
 		{
-			return FillDataset(_defaultConnection, commandText);
+			return FillDataset(_defaultConnection, commandText, null, -1);
+		}
+
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="commandText"></param>
+		/// <param name="Parameters"></param>
+		/// <returns></returns>
+		public static DataTable FillDataset(string commandText, SqlParameter[] Parameters)
+		{
+			return FillDataset(_defaultConnection, commandText, Parameters, -1);
+		}
+
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="commandText"></param>
+		/// <param name="Parameters"></param>
+		/// <returns></returns>
+		public static DataTable FillDataset(string connectionString, string commandText, SqlParameter[] Parameters)
+		{
+			return FillDataset(connectionString, commandText, Parameters);
 		}
 
 		/// <summary>

@@ -8,6 +8,7 @@ using Microsoft.Extensions.Logging;
 using Demo.ADO.NET.Models;
 using InfrastructureData;
 using Demo.ADO.NET.ViewsModels;
+using Microsoft.Data.SqlClient;
 
 namespace Demo.ADO.NET.Controllers
 {
@@ -26,14 +27,25 @@ namespace Demo.ADO.NET.Controllers
             return View();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public IActionResult getList()
         {
             string sql = @"select de.FirstName, de.LastName, de.MiddleName, de.NameStyle, de.Title, de.BirthDate, de.EmailAddress, de.Phone
                             FROM dbo.DimEmployee de
-                            WHERE de.CurrentFlag = 1";
+                            WHERE de.CurrentFlag = @CurrentFlag";
 
-            var datas = SqlAccess.FillDataset(sql);
+            var listParameter = new List<SqlParameter>();
+            SqlParameter param = new SqlParameter();
+            param.ParameterName = "@CurrentFlag";
+            param.Value = 1;
+            listParameter.Add(param);
+
+
+            var datas = SqlAccess.FillDataset(sql, listParameter.ToArray());
             int total = datas.Rows.Count;
 
             List<DimEmployee> EmployeeList = new List<DimEmployee>();
@@ -58,6 +70,41 @@ namespace Demo.ADO.NET.Controllers
             {
                 totalRow = total,
                 datas = EmployeeList
+            };
+            return Json(obj);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        public IActionResult find()
+        {
+            string sql = @"select de.FirstName
+                            FROM dbo.DimEmployee de
+                            WHERE de.CurrentFlag = 1";
+
+            var datas = SqlAccess.ExecuteScalar(sql);
+
+            var obj = new
+            {
+                totalRow = 1,
+                datas = datas
+            };
+            return Json(obj);
+        }
+
+        public IActionResult update()
+        {
+            string sql = @"UPDATE dbo.DimEmployee SET FirstName = 'Son' WHERE EmployeeKey = 1";
+
+            string response = SqlAccess.ExecuteNonQuery(sql);
+
+            var obj = new
+            {
+                totalRow = 1,
+                datas = response
             };
             return Json(obj);
         }
