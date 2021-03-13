@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Project\\C#\\Demo.ADO.NET\\InfrastructureData\\InfrastructureData.csproj": {}
+    "E:\\Project\\C#\\ADO.NET-NetCore\\Demo.ADO.NET\\InfrastructureData\\InfrastructureData.csproj": {}
   },
   "projects": {
-    "E:\\Project\\C#\\Demo.ADO.NET\\InfrastructureData\\InfrastructureData.csproj": {
+    "E:\\Project\\C#\\ADO.NET-NetCore\\Demo.ADO.NET\\InfrastructureData\\InfrastructureData.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Project\\C#\\Demo.ADO.NET\\InfrastructureData\\InfrastructureData.csproj",
+        "projectUniqueName": "E:\\Project\\C#\\ADO.NET-NetCore\\Demo.ADO.NET\\InfrastructureData\\InfrastructureData.csproj",
         "projectName": "InfrastructureData",
-        "projectPath": "E:\\Project\\C#\\Demo.ADO.NET\\InfrastructureData\\InfrastructureData.csproj",
+        "projectPath": "E:\\Project\\C#\\ADO.NET-NetCore\\Demo.ADO.NET\\InfrastructureData\\InfrastructureData.csproj",
         "packagesPath": "C:\\Users\\Windows 10\\.nuget\\packages\\",
-        "outputPath": "E:\\Project\\C#\\Demo.ADO.NET\\InfrastructureData\\obj\\",
+        "outputPath": "E:\\Project\\C#\\ADO.NET-NetCore\\Demo.ADO.NET\\InfrastructureData\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Windows 10\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -37,6 +37,20 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.Data.SqlClient": {
+              "target": "Package",
+              "version": "[2.1.2, )"
+            },
+            "Microsoft.Extensions.Configuration.Abstractions": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.Extensions.Configuration.Binder": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

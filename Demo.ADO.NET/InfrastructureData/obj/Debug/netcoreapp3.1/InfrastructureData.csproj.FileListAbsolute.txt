@@ -6,3 +6,12 @@ E:\Project\C#\Demo.ADO.NET\InfrastructureData\obj\Debug\netcoreapp3.1\Infrastruc
 E:\Project\C#\Demo.ADO.NET\InfrastructureData\obj\Debug\netcoreapp3.1\InfrastructureData.csproj.CoreCompileInputs.cache
 E:\Project\C#\Demo.ADO.NET\InfrastructureData\obj\Debug\netcoreapp3.1\InfrastructureData.dll
 E:\Project\C#\Demo.ADO.NET\InfrastructureData\obj\Debug\netcoreapp3.1\InfrastructureData.pdb
+E:\Project\C#\ADO.NET-NetCore\Demo.ADO.NET\InfrastructureData\bin\Debug\netcoreapp3.1\InfrastructureData.deps.json
+E:\Project\C#\ADO.NET-NetCore\Demo.ADO.NET\InfrastructureData\bin\Debug\netcoreapp3.1\InfrastructureData.dll
+E:\Project\C#\ADO.NET-NetCore\Demo.ADO.NET\InfrastructureData\bin\Debug\netcoreapp3.1\InfrastructureData.pdb
+E:\Project\C#\ADO.NET-NetCore\Demo.ADO.NET\InfrastructureData\obj\Debug\netcoreapp3.1\InfrastructureData.csprojAssemblyReference.cache
+E:\Project\C#\ADO.NET-NetCore\Demo.ADO.NET\InfrastructureData\obj\Debug\netcoreapp3.1\InfrastructureData.AssemblyInfoInputs.cache
+E:\Project\C#\ADO.NET-NetCore\Demo.ADO.NET\InfrastructureData\obj\Debug\netcoreapp3.1\InfrastructureData.AssemblyInfo.cs
+E:\Project\C#\ADO.NET-NetCore\Demo.ADO.NET\InfrastructureData\obj\Debug\netcoreapp3.1\InfrastructureData.dll
+E:\Project\C#\ADO.NET-NetCore\Demo.ADO.NET\InfrastructureData\obj\Debug\netcoreapp3.1\InfrastructureData.pdb
+E:\Project\C#\ADO.NET-NetCore\Demo.ADO.NET\InfrastructureData\obj\Debug\netcoreapp3.1\InfrastructureData.csproj.CoreCompileInputs.cache

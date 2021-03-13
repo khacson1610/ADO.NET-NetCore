@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Demo.ADO.NET.Models;
+using InfrastructureData;
+using Demo.ADO.NET.ViewsModels;
 
 namespace Demo.ADO.NET.Controllers
 {
@@ -20,18 +22,44 @@ namespace Demo.ADO.NET.Controllers
 
         public IActionResult Index()
         {
+
             return View();
         }
 
-        public IActionResult Privacy()
+        [HttpGet]
+        public IActionResult getList()
         {
-            return View();
-        }
+            string sql = @"select de.FirstName, de.LastName, de.MiddleName, de.NameStyle, de.Title, de.BirthDate, de.EmailAddress, de.Phone
+                            FROM dbo.DimEmployee de
+                            WHERE de.CurrentFlag = 1";
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            var datas = SqlAccess.FillDataset(sql);
+            int total = datas.Rows.Count;
+
+            List<DimEmployee> EmployeeList = new List<DimEmployee>();
+
+            for (int i = 0; i < total; i++)
+            {
+                DimEmployee item = new DimEmployee();
+
+                item.FirstName = datas.Rows[i]["FirstName"].ToString();
+                item.LastName = datas.Rows[i]["LastName"].ToString();
+                item.MiddleName = datas.Rows[i]["MiddleName"].ToString();
+                item.NameStyle = datas.Rows[i]["NameStyle"].ToString();
+                item.Title = datas.Rows[i]["Title"].ToString();
+                item.BirthDate = datas.Rows[i]["BirthDate"].ToString();
+                item.EmailAddress = datas.Rows[i]["EmailAddress"].ToString();
+                item.Phone = datas.Rows[i]["Phone"].ToString();
+
+                EmployeeList.Add(item);
+            }
+
+            var obj = new
+            {
+                totalRow = total,
+                datas = EmployeeList
+            };
+            return Json(obj);
         }
     }
 }

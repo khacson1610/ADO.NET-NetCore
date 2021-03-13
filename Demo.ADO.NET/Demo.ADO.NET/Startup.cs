@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using InfrastructureData;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -16,6 +17,7 @@ namespace Demo.ADO.NET
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+            SqlAccess.Configuration = configuration;
         }
 
         public IConfiguration Configuration { get; }
