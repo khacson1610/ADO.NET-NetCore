@@ -15,11 +15,11 @@ Microsoft.Extensions.Configuration.Abstractions
     "ConnectionStrings": [
       {
         "name": "DefaultConnection",
-        "value": "Data Source=DESKTOP-0SNFOQK;Initial Catalog=AdventureWorksDW2017;Integrated Security=False;uid=sa;password=ffm@123;"
+        "value": "Data Source=DESKTOP-0SNFOQK;Initial Catalog=AdventureWorksDW2017;Integrated Security=False;uid=sa;password=xxxx;"
       },
       {
         "name": "Umbraco",
-        "value": "Data Source=DESKTOP-0SNFOQK;Initial Catalog=UmbracoDemo;Integrated Security=False;uid=sa;password=ffm@123;"
+        "value": "Data Source=DESKTOP-0SNFOQK;Initial Catalog=UmbracoDemo;Integrated Security=False;uid=sa;password=xxxx;"
       }
     ]
   }
